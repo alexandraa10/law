@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+
+   
+    <nav class=" navbar bg-[#212d4b] py-4 px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="img/law.jpg" alt="">
+        </div>
+
+        <!-- Menú -->
+        <ul class="hidden md:flex space-x-6 text-white font-medium">
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
+
+            
+            <li class="relative group">
+                <a href="documentos.html" target="_blank" class="cursor-pointer flex items-center text-white hover:text-gray-300">
+                    DOCUMENTOS ⌄
+                </a>
+                <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden group-hover:block z-50">
+                    <li><a href="plantillas.html" target="_blank" class="block px-4 py-2 hover:bg-gray-200">PLANTILLAS</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
+            <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
+        </ul>
+        <!-- Botón de acción -->
+        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+            Mi cuenta
+        </a>
+        <!-- Botón de menú móvil -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </nav>
+    <header class="banner">
+        <div class="overlay"></div>
+        <div class="contenido">
+            <h1 class="texto">CREA TUS DOCUMENTOS LEGALES</h1>
+            <h4 class="subtexto">Hazlo fácilmente con nuestras plantillas</h4>
+        </div>
+        <img src="img/bannerl.jpg" alt="Banner">
+    </header>
+    
+    
+    <section class="text-center py-16 bg-gray-100">
+        <h3 class="text-sm uppercase font-bold text-[#212d4b] border-t-2 border-[#212d4b] w-40 mx-auto pt-2">¿Por qué Law Firm?</h3>
+        <h2 class="text-3xl font-bold mt-4">Genera tus documentos de manera rápida y fácil</h2>
+        <p class="text-gray-600 mt-2 mb-8">Completa preguntas y obtén tu documento personalizado en minutos.</p>
+    
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-6xl mx-auto">
+            
+            <div class="flex items-start gap-4">
+                <img src="img/derecho.png" class="w-14 h-14">
+                <div class="text-left max-w-[400px]">
+                    <h4 class="text-[#212d4b] font-bold text-lg">Personalización sin límites</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Edita, guarda y ajusta tus documentos cuando lo necesites. Modifica cualquier parte en tiempo real 
+                        y accede a versiones anteriores sin perder información valiosa.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="flex items-start gap-4">
+                <img src="img/seguridad-legal.png" class="w-14 h-14">
+                <div class="text-left max-w-[400px]">
+                    <h4 class="text-[#212d4b] font-bold text-lg">Seguridad y respaldo legal</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Garantizamos la validez legal con documentos revisados por expertos. Protegemos tu información 
+                        con tecnología de encriptación avanzada.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="flex items-start gap-4">
+                <img src="img/firma-digital.png" class="w-14 h-14">
+                <div class="text-left max-w-[400px]">
+                    <h4 class="text-[#212d4b] font-bold text-lg">Firma electrónica rápida y segura</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Firma documentos de manera digital en cualquier dispositivo. Reduce tiempos y costos sin comprometer la seguridad.
+                    </p>
+                </div>
+            </div>
+    
+            <div class="flex items-start gap-4">
+                <img src="img/okey.png" class="w-14 h-14">
+                <div class="text-left max-w-[400px]">
+                    <h4 class="text-[#212d4b] font-bold text-lg">Prueba gratuita sin compromiso</h4>
+                    <p class="text-gray-600 text-sm mt-1">
+                        Disfruta de nuestra versión premium gratis por 7 días. Accede a todas las herramientas sin pagos anticipados.
+                    </p>
+                </div>
+            </div>
+    
+        </div>
+    </section>
+    
+    <section id="uso" style="background-color: #bf996f;" class="mb-16">
+
+        <h2 class="text-3xl font-bold mt-8 p-6 text-white text-center">COMO HACERLO</h2>
+        
+            
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto p-6 ">
+    
+                <!-- Tarjeta 1 -->
+                <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <img src="img/ayuda.png" class="w-10 h-10 mb-3" alt="Help Icon">
+                    <h5 class="mb-2 text-2xl font-semibold text-gray-900">Elige tu favorito</h5></a>
+                    <p class="mb-3 text-gray-500">Puedes elegir nuestras diversas plantillas disponibles.</p>
+                    <a href="documentos.html" target="_blank"><button type="button" class="px-3 py-2 text-sm font-medium text-center inline-flex items-center gap-x-3 text-white bg-[#bf996f] rounded-lg ">
+                       <img src="img/circulo-de-flecha.png" class="w-5 h-5" alt=""> 
+                        VER DOCUMENTOS
+                        </button></a>
+                </div>
+            
+                <!-- Tarjeta 2 -->
+                <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <img src="img/boton-editar.png" class="w-10 h-10 mb-3" alt="New Features">
+                    <a href="#"><h5 class="mb-2 text-2xl font-semibold text-gray-900">Edita a tu manera</h5></a>
+                    <p class="mb-3 text-gray-500">Tienes la facilidad de editar de manera rápida y personalizada.</p>
+                    
+                </div>
+            
+                <!-- Tarjeta 3 -->
+                <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm">
+                    <img src="img/descargas.png" class="w-10 h-10 mb-3" alt="Support">
+                    <a href="#"><h5 class="mb-2 text-2xl font-semibold text-gray-900">Descarga tu documento</h5></a>
+                    <p class="mb-3 text-gray-500">Finalmente guarda y descarga el documento ya editado.</p>
+                    
+                </div>
+            
+            </div>
+            
+        
+        </div>
+        
+
+    </section>
+        
+
+   
+        
+
+<script src="js/menu.js"></script> 
+</body>
+<footer class="bg-[#212d4b] text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Sección 1: Logo y Descripción -->
+        <div>
+            <img src="img/logo-law.jpg" alt="Logo" class="w-32 mb-4">
+            <p class="text-gray-300 text-sm">
+                Simplificamos la creación de documentos legales con plantillas profesionales listas para usar.
+            </p>
+        </div>
+
+        <!-- Sección 2: Enlaces Rápidos -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Enlaces rápidos</h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+                <li><a href="home.html" class="hover:text-white">Inicio</a></li>
+                <li><a href="documentos.html" class="hover:text-white">Documentos</a></li>
+                <li><a href="planes.html" class="hover:text-white">Planes</a></li>
+                <li><a href="nosotros.html" class="hover:text-white">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección 3: Redes Sociales -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Síguenos</h4>
+            <div class="flex space-x-4">
+                <a href="#"><img src="img/fb.png" class="w-6 h-6" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-alt-circle.png" class="w-6 h-6" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" class="w-6 h-6" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Línea Divisoria -->
+    <div class="border-t border-gray-600 mt-6 pt-4 text-center text-gray-400 text-sm">
+        © 2024 Law Firm. Todos los derechos reservados.
+    </div>
+</footer>
+
+</html>

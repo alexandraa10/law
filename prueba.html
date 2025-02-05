@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Plantillas Legales</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="max-w-7xl mx-auto p-6">
+        <h1 class="text-3xl font-bold text-center mb-6">Plantillas Legales</h1>
+
+        <!-- Filtros -->
+        <div class="flex justify-center space-x-4 mb-6">
+            <button onclick="filterTemplates('all')" class="px-4 py-2 bg-[#212d4b] rounded-md text-white">Todas</button>
+            <button onclick="filterTemplates('contrato')" class="px-4 py-2 bg-[#212d4b] text-white rounded-md">Contratos</button>
+            <button onclick="filterTemplates('acuerdo')" class="px-4 py-2 bg-[#212d4b] text-white rounded-md">Acuerdos</button>
+            <button onclick="filterTemplates('testamento')" class="px-4 py-2 bg-[#212d4b] text-white rounded-md">Testamentos</button>
+        </div>
+
+        <!-- Listado de plantillas -->
+        <div id="templatesContainer" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Plantilla de contrato (Gratis) -->
+            <div class="template contrato bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-2">Contrato de Arrendamiento</h2>
+                <p class="text-gray-600 mb-4">Plantilla básica para alquiler de inmuebles.</p>
+                <button onclick="openEditor('arrendamiento', false)" class="bg-[#212d4b] text-white px-4 py-2 rounded-md w-full">
+                    Editar Gratis
+                </button>
+            </div>
+
+            <!-- Plantilla de contrato (Premium) -->
+            <div class="template contrato bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-2">Contrato de Trabajo</h2>
+                <p class="text-gray-600 mb-4">Contrato laboral entre empresa y empleado.</p>
+                <button onclick="openEditor('trabajo', true)" class="bg-[#212d4b] text-white px-4 py-2 rounded-md w-full cursor-not-allowed">
+                  <a href="pago.html"></a>  Premium 🔒
+                </button>
+            </div>
+
+            <!-- Plantilla de acuerdo (Gratis) -->
+            <div class="template acuerdo bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-2">Acuerdo de Confidencialidad</h2>
+                <p class="text-gray-600 mb-4">Protege información sensible con este acuerdo.</p>
+                <button onclick="openEditor('confidencialidad', false)" class="bg-[#212d4b] text-white px-4 py-2 rounded-md w-full">
+                    Editar Gratis
+                </button>
+            </div>
+
+            <!-- Plantilla de testamento (Premium) -->
+            <div class="template testamento bg-white p-4 rounded-lg shadow-md">
+                <h2 class="text-xl font-bold mb-2">Testamento Legal</h2>
+                <p class="text-gray-600 mb-4">Documento legal para herencias y bienes.</p>
+                <button onclick="openEditor('testamento', true)" class="bg-[#212d4b] text-white px-4 py-2 rounded-md w-full cursor-not-allowed">
+                    Premium 🔒
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function filterTemplates(category) {
+            let templates = document.querySelectorAll('.template');
+            templates.forEach(template => {
+                if (category === 'all' || template.classList.contains(category)) {
+                    template.style.display = "block";
+                } else {
+                    template.style.display = "none";
+                }
+            });
+        }
+
+        function openEditor(template, isPremium) {
+            if (isPremium) {
+                alert("Esta plantilla es premium. Adquiérela para acceder.");
+                return;
+            }
+            alert(`Abriendo editor para: ${template}`);
+        }
+    </script>
+</body>
+</html>

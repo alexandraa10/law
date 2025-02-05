@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+</head>
+<body class="">
+    <nav class=" navbar bg-[#212d4b] py-4 px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="img/law.jpg" alt="">
+        </div>
+
+        <!-- Menú -->
+        <ul class="hidden md:flex space-x-6 text-white font-medium">
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
+
+            
+            <li class="relative group">
+                <a href="documentos.html" target="_blank" class="cursor-pointer flex items-center text-white hover:text-gray-300">
+                    DOCUMENTOS ⌄
+                </a>
+                <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden group-hover:block z-50">
+                    <li><a href="plantillas.html" target="_blank" class="block px-4 py-2 hover:bg-gray-200">PLANTILLAS</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
+            <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
+        </ul>
+        <!-- Botón de acción -->
+        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+            Mi cuenta
+        </a>
+        <!-- Botón de menú móvil -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </nav>
+    <header class="banner">
+        <div class="contenido">
+            <h1 class="texto uppercase">Crea documentos legales de manera rápida y sencilla</h1>
+            <h4 class="subtexto">Accede a plantillas profesionales y personalizadas</h4>
+        </div>
+        <img src="img/banner-2.jpg" alt="Banner">
+    </header>
+
+    <div class="max-w-6xl mx-auto grid grid-cols-2 gap-6 bg-white p-6 shadow-lg rounded-lg mt-8 pt-4">
+        
+        <!-- FORMULARIO -->
+        <div>
+            <h2 class="text-2xl font-bold mb-4">Formulario</h2>
+
+            <form id="contractForm">
+                <div class="mb-4">
+                    <label class="block text-gray-700">Localidad:</label>
+                    <input type="text" id="localidad" class="w-full p-2 border rounded" placeholder="Ej: Lima, Perú">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700">Nombre del Arrendador:</label>
+                    <input type="text" id="arrendador" class="w-full p-2 border rounded" placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700">Nombre del Arrendatario:</label>
+                    <input type="text" id="arrendatario" class="w-full p-2 border rounded" placeholder="Ej: María López">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700">Dirección del Inmueble:</label>
+                    <input type="text" id="direccion" class="w-full p-2 border rounded" placeholder="Ej: Calle 123, Ciudad">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700">Fecha de Inicio:</label>
+                    <input type="date" id="fechaInicio" class="w-full p-2 border rounded">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700">Duración del Contrato (meses):</label>
+                    <input type="number" id="duracion" class="w-full p-2 border rounded" placeholder="Ej: 12">
+                </div>
+
+                <div class="mb-4">
+                    <label class="block text-gray-700">Precio Mensual (SOL):</label>
+                    <input type="number" id="precio" class="w-full p-2 border rounded" placeholder="Ej: 500">
+                </div>
+            </form>
+
+            <!-- BOTÓN PARA DESCARGAR PDF -->
+            <button onclick="generatePDF()" class="mt-4 w-full bg-[#212d4b] text-white py-2 rounded hover:bg-[#212d4b]">
+                Descargar PDF
+            </button>
+        </div>
+
+        <!-- VISTA PREVIA DEL DOCUMENTO -->
+        <div class="border p-4 bg-gray-50 rounded-lg shadow-md h-[600px] overflow-y-auto">
+            <h3 class="text-xl font-semibold text-center mb-2">Contrato de Arrendamiento</h3>
+
+            <p><strong>Localidad:</strong> <span id="prev-localidad">________</span>.
+
+            <h4 class="mt-4 font-bold">REUNIDOS</h4>
+            <p>De una parte, <strong><span id="prev-arrendador">________</span></strong>, en calidad de arrendador.</p>
+            <p>Y de otra parte, <strong><span id="prev-arrendatario">________</span></strong>, en calidad de arrendatario.</p>
+
+            <h4 class="mt-4 font-bold">INTERVIENEN</h4>
+            <p>Ambas partes acuerdan el alquiler del inmueble ubicado en:</p>
+            <p><strong>Dirección:</strong> <span id="prev-direccion">________</span></p>
+            
+
+            <h4 class="mt-4 font-bold">CLÁUSULAS</h4>
+
+            <h5 class="font-bold">1. Objeto del Contrato</h5>
+            <p>El presente contrato tiene como objetivo el arrendamiento del inmueble anteriormente mencionado, el cual se destinará exclusivamente para uso residencial.</p>
+
+            <h5 class="font-bold mt-2">2. Duración</h5>
+            <p>La duración del presente contrato será de <strong><span id="prev-duracion">________</span></strong> meses, iniciando el <span id="prev-fechaInicio">________</span>.</p>
+
+            <h5 class="font-bold mt-2">3. Pago del Alquiler</h5>
+            <p>El arrendatario se compromete a abonar una cantidad mensual de <strong>S/.<span id="prev-precio">________</span></strong>, a pagar dentro de los primeros 5 días de cada mes.</p>
+
+            <h5 class="font-bold mt-2">7. Firmas</h5>
+            <p>En señal de conformidad, firman el presente contrato:</p>
+            <p>_______________________ (Arrendador)</p>
+            <p>_______________________ (Arrendatario)</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("contractForm").addEventListener("input", function () {
+    const fechaInicio = document.getElementById("fechaInicio").value;
+    
+    // Convertir formato de fecha a DD/MM/YYYY
+    if (fechaInicio) {
+        const fechaObj = new Date(fechaInicio);
+        const dia = fechaObj.getDate().toString().padStart(2, '0');
+        const mes = (fechaObj.getMonth() + 1).toString().padStart(2, '0'); // Los meses van de 0 a 11
+        const anio = fechaObj.getFullYear();
+        document.getElementById("prev-fechaInicio").textContent = `${dia}/${mes}/${anio}`;
+    } else {
+        document.getElementById("prev-fechaInicio").textContent = "________";
+    }
+
+    // Otros campos
+    document.getElementById("prev-localidad").textContent = document.getElementById("localidad").value || "________";
+    document.getElementById("prev-arrendador").textContent = document.getElementById("arrendador").value || "________";
+    document.getElementById("prev-arrendatario").textContent = document.getElementById("arrendatario").value || "________";
+    document.getElementById("prev-direccion").textContent = document.getElementById("direccion").value || "________";
+    document.getElementById("prev-duracion").textContent = document.getElementById("duracion").value || "________";
+    document.getElementById("prev-precio").textContent = document.getElementById("precio").value || "________";
+});
+
+function generatePDF() {
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF();
+
+    // Definir estilo de fuente más formal
+    doc.setFont("times", "normal");
+    
+    // Reducir tamaño de texto
+    const fontSize = 11;
+    doc.setFontSize(fontSize);
+
+    // Espaciado inicial
+    let y = 20;
+
+    // Obtener valores ingresados
+    const localidad = document.getElementById("localidad").value || "________";
+    const arrendador = document.getElementById("arrendador").value || "________";
+    const arrendatario = document.getElementById("arrendatario").value || "________";
+    const direccion = document.getElementById("direccion").value || "________";
+    const duracion = document.getElementById("duracion").value || "________";
+    const precio = document.getElementById("precio").value || "________";
+
+    // Formatear fecha
+    let fechaInicio = document.getElementById("fechaInicio").value;
+    if (fechaInicio) {
+        const fechaObj = new Date(fechaInicio);
+        fechaInicio = `${fechaObj.getDate().toString().padStart(2, '0')}/${(fechaObj.getMonth() + 1).toString().padStart(2, '0')}/${fechaObj.getFullYear()}`;
+    } else {
+        fechaInicio = "________";
+    }
+
+    // Título
+    doc.setFontSize(14);
+    doc.setFont("times", "bold");
+    doc.text("Contrato de Arrendamiento", 70, y);
+    y += 10;
+
+    doc.setFontSize(fontSize);
+    doc.setFont("times", "normal");
+    doc.text(`Localidad: ${localidad}, a ${fechaInicio}`, 20, y);
+    y += 8;
+
+    doc.setFont("times", "bold");
+    doc.text("REUNIDOS", 20, y);
+    y += 6;
+    doc.setFont("times", "normal");
+    doc.text(`De una parte, ${arrendador}, en calidad de arrendador.`, 20, y);
+    y += 6;
+    doc.text(`Y de otra parte, ${arrendatario}, en calidad de arrendatario.`, 20, y);
+    y += 8;
+
+    doc.setFont("times", "bold");
+    doc.text("INTERVIENEN", 20, y);
+    y += 6;
+    doc.setFont("times", "normal");
+    doc.text("Ambas partes acuerdan el alquiler del inmueble ubicado en:", 20, y);
+    y += 6;
+    doc.text(`Dirección: ${direccion}`, 20, y);
+    y += 10;
+
+    doc.setFont("times", "bold");
+    doc.text("CLÁUSULAS", 20, y);
+    y += 8;
+
+    doc.setFont("times", "bold");
+    doc.text("1. Objeto del Contrato", 20, y);
+    y += 6;
+    doc.setFont("times", "normal");
+    doc.text("El presente contrato tiene como objetivo el arrendamiento del inmueble anteriormente", 20, y);
+    y += 6;
+    doc.text("mencionado, el cual se destinará exclusivamente para uso residencial.", 20, y);
+    y += 8;
+
+    doc.setFont("times", "bold");
+    doc.text("2. Duración", 20, y);
+    y += 6;
+    doc.setFont("times", "normal");
+    doc.text(`La duración del presente contrato será de ${duracion} meses, iniciando el ${fechaInicio}.`, 20, y);
+    y += 8;
+
+    doc.setFont("times", "bold");
+    doc.text("3. Pago del Alquiler", 20, y);
+    y += 6;
+    doc.setFont("times", "normal");
+    doc.text(`El arrendatario se compromete a abonar una cantidad mensual de S/.${precio},`, 20, y);
+    y += 6;
+    doc.text("a pagar dentro de los primeros 5 días de cada mes.", 20, y);
+    y += 8;
+
+    doc.setFont("times", "bold");
+    doc.text("7. Firmas", 20, y);
+    y += 6;
+    doc.setFont("times", "normal");
+    doc.text("En señal de conformidad, firman el presente contrato:", 20, y);
+    y += 12;
+
+    doc.text("__________________________", 20, y);
+    doc.text("Arrendador", 20, y + 5);
+
+    doc.text("__________________________", 120, y);
+    doc.text("Arrendatario", 120, y + 5);
+
+    // Guardar el PDF con nombre personalizado
+    doc.save("Contrato_Arrendamiento.pdf");
+}
+
+
+    </script>
+
+</body>
+<footer class="bg-[#212d4b] text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Sección 1: Logo y Descripción -->
+        <div>
+            <img src="img/logo-law.jpg" alt="Logo" class="w-32 mb-4">
+            <p class="text-gray-300 text-sm">
+                Simplificamos la creación de documentos legales con plantillas profesionales listas para usar.
+            </p>
+        </div>
+
+        <!-- Sección 2: Enlaces Rápidos -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Enlaces rápidos</h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+                <li><a href="home.html" class="hover:text-white">Inicio</a></li>
+                <li><a href="documentos.html" class="hover:text-white">Documentos</a></li>
+                <li><a href="planes.html" class="hover:text-white">Planes</a></li>
+                <li><a href="nosotros.html" class="hover:text-white">Npsotros</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección 3: Redes Sociales -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Síguenos</h4>
+            <div class="flex space-x-4">
+                <a href="#"><img src="img/fb.png" class="w-6 h-6" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-alt-circle.png" class="w-6 h-6" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" class="w-6 h-6" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Línea Divisoria -->
+    <div class="border-t border-gray-600 mt-6 pt-4 text-center text-gray-400 text-sm">
+        © 2024 Law Firm. Todos los derechos reservados.
+    </div>
+</footer>
+</html>

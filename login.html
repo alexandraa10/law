@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <script type="module">
+        // Importar Firebase
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } 
+            from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+        // Configuración de Firebase
+        const firebaseConfig = {
+            apiKey: "AIzaSyAYn7DbLdfDJlO1KRFhWJB5fWq8_SKnh7A",
+            authDomain: "law-firm-ae7af.firebaseapp.com",
+            projectId: "law-firm-ae7af",
+            storageBucket: "law-firm-ae7af.appspot.com",  // Corregido aquí
+            messagingSenderId: "938529142289",
+            appId: "1:938529142289:web:4fe70ac10a226f985023b0",
+            measurementId: "G-76244QH2MV"
+        };
+
+        // Inicializar Firebase (Evita múltiples inicializaciones)
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        // Función para login
+        window.login = function () {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then(userCredential => {
+                    alert("✅ Inicio de sesión exitoso");
+                    console.log("Usuario:", userCredential.user);
+                    window.location.href = "prueba.html"; // Redirige a una página después del login
+                })
+                .catch(error => {
+                    alert("⚠ Error al iniciar sesión: " + error.message);
+                });
+        };
+
+        // Función para registro
+        window.register = function () {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(userCredential => {
+                    alert("✅ Registro exitoso");
+                    console.log("Usuario registrado:", userCredential.user);
+                })
+                .catch(error => {
+                    alert("⚠ Error al registrarse: " + error.message);
+                });
+        };
+
+        // Función para logout
+        window.logout = function () {
+            signOut(auth)
+                .then(() => {
+                    alert("👋 Sesión cerrada");
+                    window.location.href = "home.html"; // Redirigir al login
+                })
+                .catch(error => {
+                    alert("⚠ Error al cerrar sesión: " + error.message);
+                });
+        };
+
+        // Agregar evento para el botón de logout
+        document.addEventListener("DOMContentLoaded", () => {
+            const logoutBtn = document.getElementById("logoutBtn");
+            if (logoutBtn) {
+                logoutBtn.addEventListener("click", window.logout);
+            }
+        });
+
+    </script>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="max-w-md mx-auto p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-2xl font-bold text-center mb-4">Iniciar Sesión</h2>
+
+        <input type="email" id="email" class="w-full p-2 border rounded mb-2" placeholder="Correo electrónico">
+        <input type="password" id="password" class="w-full p-2 border rounded mb-2" placeholder="Contraseña">
+
+        <button onclick="login()" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700 mt-2">
+            Ingresar
+        </button>
+        
+        <button onclick="register()" class="w-full bg-green-600 text-white p-2 rounded hover:bg-green-700 mt-2">
+            Registrarse
+        </button>
+
+        <button id="logoutBtn" class="bg-red-600 text-white py-2 px-4 rounded mt-2">
+            Cerrar sesión
+        </button>
+    </div>
+</body>
+</html>

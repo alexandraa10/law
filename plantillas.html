@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantillas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <nav class=" navbar bg-[#212d4b] py-4 px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="img/law.jpg" alt="">
+        </div>
+
+        <!-- Menú -->
+        <ul class="hidden md:flex space-x-6 text-white font-medium">
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
+
+            
+            <li class="relative group">
+                <a href="documentos.html" target="_blank" class="cursor-pointer flex items-center text-white hover:text-gray-300">
+                    DOCUMENTOS ⌄
+                </a>
+                <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden group-hover:block z-50">
+                    <li><a href="plantillas.html" target="_blank" class="block px-4 py-2 hover:bg-gray-200">PLANTILLAS</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
+            <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
+        </ul>
+        <!-- Botón de acción -->
+        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+            Mi cuenta
+        </a>
+        <!-- Botón de menú móvil -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </nav>
+    <header class="banner">
+        <div class="contenido">
+            <h1 class="texto uppercase">Asegura tu legado con un testamento válido</h1>
+            <h4 class="subtexto">Documenta tu voluntad de manera clara y legal</h4>
+        </div>
+        <img src="img/banner-2.jpg" alt="Banner">
+    </header>
+
+        <div class="max-w-7xl mx-auto p-6">
+            <h1 class="text-4xl font-bold text-center mb-6">Plantillas Legales</h1>
+            <p class="text-center text-gray-600 mb-8">Edita y genera documentos legales en tiempo real.</p>
+    
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Plantilla Gratuita -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-semibold mb-2">Contrato de Arrendamiento</h2>
+                    <p class="text-gray-600 mb-4">Disponible gratuitamente.</p>
+                    <button onclick="editarPlantilla('arrendamiento')" class="bg-blue-600 text-white px-4 py-2 rounded w-full">Editar</button>
+                </div>
+    
+                <!-- Plantilla Premium -->
+                <div class="bg-white p-6 rounded-lg shadow-md relative">
+                    <h2 class="text-2xl font-semibold mb-2">Acuerdo de Confidencialidad</h2>
+                    <p class="text-gray-600 mb-4">Disponible solo para usuarios premium.</p>
+                    <button class="bg-gray-400 text-white px-4 py-2 rounded w-full cursor-not-allowed" disabled>Premium</button>
+                    <div class="absolute inset-0 bg-gray-300 opacity-50 rounded-lg"></div>
+                </div>
+            </div>
+        </div>
+    
+        <!-- Modal de Edición -->
+        <div id="editorModal" class="hidden fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
+            <div class="bg-white p-6 rounded-lg shadow-lg w-1/2">
+                <h2 class="text-2xl font-bold mb-4">Editar Documento</h2>
+                <textarea id="documentEditor" class="w-full h-40 p-2 border rounded"></textarea>
+                <div class="flex justify-end space-x-2 mt-4">
+                    <button onclick="cerrarEditor()" class="bg-gray-500 text-white px-4 py-2 rounded">Cerrar</button>
+                    <button onclick="generarPDF()" class="bg-green-600 text-white px-4 py-2 rounded">Descargar PDF</button>
+                </div>
+            </div>
+        </div>
+    
+        <script>
+            function editarPlantilla(tipo) {
+                let contenido = "";
+                if (tipo === "arrendamiento") {
+                    contenido = "CONTRATO DE ARRENDAMIENTO\n\nEntre [Nombre Arrendador] y [Nombre Arrendatario] se acuerda el arrendamiento de la propiedad ubicada en [Dirección].";
+                }
+                document.getElementById("documentEditor").value = contenido;
+                document.getElementById("editorModal").classList.remove("hidden");
+            }
+    
+            function cerrarEditor() {
+                document.getElementById("editorModal").classList.add("hidden");
+            }
+    
+            function generarPDF() {
+                const { jsPDF } = window.jspdf;
+                const doc = new jsPDF();
+                const contenido = document.getElementById("documentEditor").value;
+                doc.text(contenido, 10, 10);
+                doc.save("Documento_Legal.pdf");
+            }
+        </script>
+
+</body>
+<footer class="bg-[#212d4b] text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Sección 1: Logo y Descripción -->
+        <div>
+            <img src="img/logo-law.jpg" alt="Logo" class="w-32 mb-4">
+            <p class="text-gray-300 text-sm">
+                Simplificamos la creación de documentos legales con plantillas profesionales listas para usar.
+            </p>
+        </div>
+
+        <!-- Sección 2: Enlaces Rápidos -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Enlaces rápidos</h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+                <li><a href="home.html" class="hover:text-white">Inicio</a></li>
+                <li><a href="documentos.html" class="hover:text-white">Documentos</a></li>
+                <li><a href="planes.html" class="hover:text-white">Planes</a></li>
+                <li><a href="nosotros.html" class="hover:text-white">Npsotros</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección 3: Redes Sociales -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Síguenos</h4>
+            <div class="flex space-x-4">
+                <a href="#"><img src="img/fb.png" class="w-6 h-6" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-alt-circle.png" class="w-6 h-6" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" class="w-6 h-6" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Línea Divisoria -->
+    <div class="border-t border-gray-600 mt-6 pt-4 text-center text-gray-400 text-sm">
+        © 2024 Law Firm. Todos los derechos reservados.
+    </div>
+</footer>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planes</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class=" navbar bg-[#212d4b] py-4 px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="img/law.jpg" alt="">
+        </div>
+
+        <!-- Menú -->
+        <ul class="hidden md:flex space-x-6 text-white font-medium">
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
+
+            
+            <li class="relative group">
+                <a href="documentos.html" target="_blank" class="cursor-pointer flex items-center text-white hover:text-gray-300">
+                    DOCUMENTOS ⌄
+                </a>
+                <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden group-hover:block z-50">
+                    <li><a href="plantillas.html" target="_blank" class="block px-4 py-2 hover:bg-gray-200">PLANTILLAS</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
+            <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
+        </ul>
+        <!-- Botón de acción -->
+        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+            Mi cuenta
+        </a>
+        <!-- Botón de menú móvil -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </nav>
+    <header class="banner">
+        <div class="contenido">
+            <h1 class="texto uppercase">Elige el plan que se adapta a ti</h1>
+            <h4 class="subtexto">Soluciones legales a tu alcance</h4>
+        </div>
+        <img src="img/banner-2.jpg" alt="Banner">
+    </header>
+    <section class="p-4 md:p-8">
+        <div class="py-8 max-w-screen-xl lg:py-16">
+            <div class="mx-auto max-w-3xl text-center pb-12 md:pb-20">
+                <h2 class="texto text-3xl font-bold sm:text-4xl mb-4">Optimiza tu flujo de trabajo legal con el plan ideal</h2>
+                <p class="subtexto text-xl">Elige el plan perfecto para ti</p>
+            </div>
+            <div class="container">
+                 
+            
+            <div class="space-y-8 lg:grid lg:grid-cols-3 sm:gap-6 xl:gap-10 lg:space-y-0 w-full max-w-7xl mx-auto px-2 md:px-4">
+
+
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-md text-center rounded-box shadow-xl xl:p-8  border border-base-300 shadow-primary/10 border-primary/10 transition hover:border-primary-focus/20 hover:shadow-primary-focus/20">
+                    <h3 class="mb-4 text-2xl font-semibold">Gratis</h3>
+                    <div class="flex justify-center items-baseline my-1 h-10">
+                        <p class="font-light sm:text-lg">Prueba nuestra plataforma y acceder a documentos legales.</p>
+                    </div>
+                    <div class="flex justify-center items-baseline my-9">
+                        <span class="mr-2 text-5xl font-extrabold">s/.0</span>
+                        <span class="">/mes</span>
+                    </div>
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+    
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+    
+                            <span class="text-base-content/80">Crea hasta 5 documentos legales al mes</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Edición básica</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Data export</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Soporte básico (FAQ)</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/30"> No permite acceso a plantillas premium</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/30">No ofrece almacenamiento en la nube</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/30">No incluye herramientas avanzadas</span>
+                        </li>
+                    </ul>
+                    <button class="w-full font-bold gap-2 shadow uppercase p-2 bg-[#212d4b] text-white">COMPRAR AHORA</button>
+                </div>
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-md text-center rounded-box shadow-xl xl:p-8  border border-base-300 shadow-primary/10 border-primary/10 transition hover:border-primary-focus/20 hover:shadow-primary-focus/20">
+                    <h3 class="mb-4 text-2xl font-semibold">Básico</h3>
+                    <div class="flex justify-center items-baseline my-1 h-10">
+                        <p class="font-light sm:text-lg">Acceso a una mayor cantidad de documentos.</p>
+                    </div>
+                    <div class="flex justify-center items-baseline my-9">
+    
+                        <span class="mr-2 text-5xl font-extrabold">s/.100</span>
+                        <span class="">/mes</span>
+                    </div>
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Acceso a documentos legales premium.</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Personalización avanzada</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Firma electrónica incluida</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Historial de versiones</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Soporte completo</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Automatización de documentos</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-error" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/30">No incluye servidor dedicado</span>
+                        </li>
+                    </ul>
+                    <a href="carritocompra.html" target="_blank"><button class="w-full p-2 bg-[#212d4b] text-white font-bold gap-2 shadow uppercase">COMPRAR AHORA</button></a>
+                </div>
+                <div
+                    class="flex flex-col p-6 mx-auto max-w-md text-center rounded-box shadow-xl xl:p-8  border border-base-300 shadow-primary/10 border-primary/10 transition hover:border-primary-focus/20 hover:shadow-primary-focus/20">
+                    <h3 class="mb-4 text-2xl font-semibold">Premium</h3>
+                    <div class="flex justify-center items-baseline my-1 h-10">
+                        <p class="font-light sm:text-lg">Acceso ilimitado a documentos legales y herramientas avanzadas</p>
+                    </div>
+                    <div class="flex justify-center items-baseline my-9">
+    
+                        <span class="mr-2 text-5xl font-extrabold">s/.200</span>
+                        <span class="">/mes</span>
+                    </div>
+                    <ul role="list" class="mb-8 space-y-4 text-left">
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Generación de documentos ilimitada</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Plantillas exclusivas y contenido legal</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Firma electrónica avanzada</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80"> Exportación en múltiples formatos</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Automatización de flujos de trabajo</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Integración con almacenamiento</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="w-6 h-6 text-green-500" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                                fill="currentColor" viewBox="0 0 20 20">
+                                <path
+                                    d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z">
+                                </path>
+                            </svg>
+                            <span class="text-base-content/80">Servidor dedicado</span>
+                        </li>
+                    </ul>
+                    <a href="carritocompra.html" target="_blank"><button class="w-full p-2 bg-[#212d4b] text-white font-bold gap-2 shadow uppercase">COMPRAR AHORA</button></a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    
+<script src=""></script>
+</body>
+<footer class="bg-[#212d4b] text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Sección 1: Logo y Descripción -->
+        <div>
+            <img src="img/logo-law.jpg" alt="Logo" class="w-32 mb-4">
+            <p class="text-gray-300 text-sm">
+                Simplificamos la creación de documentos legales con plantillas profesionales listas para usar.
+            </p>
+        </div>
+
+        <!-- Sección 2: Enlaces Rápidos -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Enlaces rápidos</h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+                <li><a href="home.html" class="hover:text-white">Inicio</a></li>
+                <li><a href="documentos.html" class="hover:text-white">Documentos</a></li>
+                <li><a href="planes.html" class="hover:text-white">Planes</a></li>
+                <li><a href="nosotros.html" class="hover:text-white">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección 3: Redes Sociales -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Síguenos</h4>
+            <div class="flex space-x-4">
+                <a href="#"><img src="img/fb.png" class="w-6 h-6" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-alt-circle.png" class="w-6 h-6" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" class="w-6 h-6" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Línea Divisoria -->
+    <div class="border-t border-gray-600 mt-6 pt-4 text-center text-gray-400 text-sm">
+        © 2024 Law Firm. Todos los derechos reservados.
+    </div>
+</footer>
+</html>

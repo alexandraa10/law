@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosotros</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class=" navbar bg-[#212d4b] py-4 px-6 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center space-x-2">
+            <img src="img/law.jpg" alt="">
+        </div>
+
+        <!-- Menú -->
+        <ul class="hidden md:flex space-x-6 text-white font-medium">
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
+
+            
+            <li class="relative group">
+                <a href="documentos.html" target="_blank" class="cursor-pointer flex items-center text-white hover:text-gray-300">
+                    DOCUMENTOS ⌄
+                </a>
+                <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden group-hover:block z-50">
+                    <li><a href="plantillas.html" target="_blank" class="block px-4 py-2 hover:bg-gray-200">PLANTILLAS</a></li>
+                </ul>
+            </li>
+            
+            
+            <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
+            <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
+        </ul>
+        <!-- Botón de acción -->
+        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+            Mi cuenta
+        </a>
+        <!-- Botón de menú móvil -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl">
+            ☰
+        </button>
+    </nav>
+    <header class="banner">
+        <div class="contenido">
+            <h1 class="texto uppercase">Soluciones legales confiables</h1>
+            <h4 class="subtexto">Somos tu mejor opción en documentos legales</h4>
+        </div>
+        <img src="img/banner-2.jpg" alt="Banner">
+    </header>
+    <body class="bg-gray-100">
+    
+       
+        
+        <!-- Misión, Visión y Valores -->
+        <section class="max-w-6xl mx-auto py-12 px-6 grid md:grid-cols-3 gap-8">
+            <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                <h2 class="text-2xl font-semibold text-blue-900">Nuestra Misión</h2>
+                <p class="mt-4 text-gray-700">Facilitar el acceso a documentos legales confiables y personalizables para todos.</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                <h2 class="text-2xl font-semibold text-blue-900">Nuestra Visión</h2>
+                <p class="mt-4 text-gray-700">Ser la plataforma líder en soluciones legales digitales y automatización de documentos.</p>
+            </div>
+            <div class="bg-white shadow-lg p-6 rounded-lg text-center">
+                <h2 class="text-2xl font-semibold text-blue-900">Nuestros Valores</h2>
+                <ul class="mt-4 text-gray-700 space-y-2">
+                    <li>✔️ Confianza</li>
+                    <li>✔️ Accesibilidad</li>
+                    <li>✔️ Innovación</li>
+                    <li>✔️ Seguridad</li>
+                </ul>
+            </div>
+        </section>
+        
+        <!-- Por qué Elegirnos -->
+        <section class="bg-[#212d4b] text-white py-16">
+            <div class="max-w-6xl mx-auto text-center">
+                <h2 class="text-3xl font-bold">¿Por qué elegirnos?</h2>
+                <div class="grid md:grid-cols-3 gap-8 mt-8">
+                    <div class="p-6 bg-white text-blue-900 shadow-lg rounded-lg">
+                        <h3 class="text-xl font-semibold">📜 Acceso inmediato</h3>
+                        <p class="mt-2">Obtén tus documentos en minutos, sin demoras.</p>
+                    </div>
+                    <div class="p-6 bg-white text-blue-900 shadow-lg rounded-lg">
+                        <h3 class="text-xl font-semibold">⚡ Plataforma fácil</h3>
+                        <p class="mt-2">Interfaz intuitiva para crear documentos legales.</p>
+                    </div>
+                    <div class="p-6 bg-white text-blue-900 shadow-lg rounded-lg">
+                        <h3 class="text-xl font-semibold">🔒 Seguridad garantizada</h3>
+                        <p class="mt-2">Protección total de tus datos y privacidad.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contacto -->
+        <section class="py-16 max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold text-blue-900">Contáctanos</h2>
+            <p class="mt-4 text-gray-700">Si tienes preguntas, escríbenos a <a href="mailto:lawfirm@lawfm.com" class="text-[#212d4b]font-semibold">lawfirm@lawfm.com</a></p>
+        </section>
+
+
+</body>
+<footer class="bg-[#212d4b] text-white py-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Sección 1: Logo y Descripción -->
+        <div>
+            <img src="img/logo-law.jpg" alt="Logo" class="w-32 mb-4">
+            <p class="text-gray-300 text-sm">
+                Simplificamos la creación de documentos legales con plantillas profesionales listas para usar.
+            </p>
+        </div>
+
+        <!-- Sección 2: Enlaces Rápidos -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Enlaces rápidos</h4>
+            <ul class="text-gray-300 text-sm space-y-2">
+                <li><a href="home.html" class="hover:text-white">Inicio</a></li>
+                <li><a href="documentos.html" class="hover:text-white">Documentos</a></li>
+                <li><a href="planes.html" class="hover:text-white">Planes</a></li>
+                <li><a href="nosotros.html" class="hover:text-white">Nosotros</a></li>
+            </ul>
+        </div>
+
+        <!-- Sección 3: Redes Sociales -->
+        <div>
+            <h4 class="text-lg font-semibold mb-3">Síguenos</h4>
+            <div class="flex space-x-4">
+                <a href="#"><img src="img/fb.png" class="w-6 h-6" alt="Facebook"></a>
+                <a href="#"><img src="img/twitter-alt-circle.png" class="w-6 h-6" alt="Twitter"></a>
+                <a href="#"><img src="img/linkedin.png" class="w-6 h-6" alt="LinkedIn"></a>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Línea Divisoria -->
+    <div class="border-t border-gray-600 mt-6 pt-4 text-center text-gray-400 text-sm">
+        © 2024 Law Firm. Todos los derechos reservados.
+    </div>
+</footer>
+</html>

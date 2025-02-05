@@ -1,0 +1,20 @@
+import { auth, db } from "./js/firebase-config.js"; // Importar configuración de Firebase
+import { doc, updateDoc } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js";
+
+// Función para actualizar estado de usuario a Premium
+async function actualizarPremium() {
+    const user = auth.currentUser; // Obtener usuario actual
+    if (user) {
+        const userRef = doc(db, "usuarios", user.uid); // Referencia al documento del usuario
+        await updateDoc(userRef, { premium: true }); // Actualizar a premium
+
+        alert("Ahora tienes acceso premium.");
+        window.location.href = "premium.html"; // Redirigir a la página premium
+    } else {
+        alert("Debes iniciar sesión primero.");
+    }
+}
+
+// Llamar esta función cuando el pago sea exitoso
+document.getElementById("confirmarPago").addEventListener("click", actualizarPremium);
