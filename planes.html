@@ -17,7 +17,7 @@
 
         <!-- Menú -->
         <ul class="hidden md:flex space-x-6 text-white font-medium">
-            <li><a href="index.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</li></a>
 
             
             <li class="relative group">
@@ -33,14 +33,28 @@
             <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
             <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
         </ul>
-        <!-- Botón de acción -->
-        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+        <!-- Botón Mi cuenta -->
+        <a href="login.html" class="hidden md:block bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
             Mi cuenta
         </a>
-        <!-- Botón de menú móvil -->
-        <button id="menu-toggle" class="md:hidden text-white text-2xl">
+
+        <!-- Botón hamburger -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
             ☰
         </button>
+    </nav>
+
+    <!-- Menú mobile  -->
+    <div id="mobile-menu" class="hidden flex-col bg-[#212d4b] text-white px-6 py-4 space-y-4 md:hidden">
+        <a href="home.html" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">INICIO</a>
+        <a href="documentos.html" target="_blank" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">DOCUMENTOS</a>
+        <a href="plantillas.html" target="_blank" class="hover:text-gray-300 py-1 pl-4 text-sm border-b border-[#2e3f6b]">— PLANTILLAS</a>
+        <a href="nosotros.html" target="_blank" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">NOSOTROS</a>
+        <a href="planes.html" target="_blank" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">PLANES</a>
+        <a href="login.html" class="block text-center bg-[#bf996f] text-white px-6 py-2 rounded-full font-semibold hover:bg-black transition mt-2">
+            Mi cuenta
+        </a>
+    </div>
     </nav>
     <header class="banner">
         <div class="contenido">
@@ -301,7 +315,7 @@
         </div>
     </section>
     
-<script src=""></script>
+<script src="js/menu.js"></script>
 </body>
 <footer class="bg-[#212d4b] text-white py-10">
     <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -318,7 +332,7 @@
         <div>
             <h4 class="text-lg font-semibold mb-3">Enlaces rápidos</h4>
             <ul class="text-gray-300 text-sm space-y-2">
-                <li><a href="index.html" class="hover:text-white">Inicio</a></li>
+                <li><a href="home.html" class="hover:text-white">Inicio</a></li>
                 <li><a href="documentos.html" class="hover:text-white">Documentos</a></li>
                 <li><a href="planes.html" class="hover:text-white">Planes</a></li>
                 <li><a href="nosotros.html" class="hover:text-white">Nosotros</a></li>
