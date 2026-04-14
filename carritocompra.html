@@ -18,7 +18,7 @@
             <img src="img/law.jpg" alt="">
         </div>
         <ul class="hidden md:flex space-x-6 text-white font-medium">
-            <li><a href="index.html" class="hover:text-gray-300 cursor-pointer">INICIO</a></li>
+            <li><a href="home.html" class="hover:text-gray-300 cursor-pointer">INICIO</a></li>
             <li class="relative group">
                 <a href="documentos.html" target="_blank" class="cursor-pointer flex items-center text-white hover:text-gray-300">DOCUMENTOS ⌄</a>
                 <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-800 rounded-lg shadow-lg hidden group-hover:block z-50">
@@ -28,8 +28,28 @@
             <li class="hover:text-gray-300 cursor-pointer"><a href="nosotros.html" target="_blank">NOSOTROS</a></li>
             <li class="hover:text-gray-300 cursor-pointer"><a href="planes.html" target="_blank">PLANES</a></li>
         </ul>
-        <a href="login.html" class="bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">Mi cuenta</a>
-        <button id="menu-toggle" class="md:hidden text-white text-2xl">☰</button>
+         <!-- Botón Mi cuenta -->
+        <a href="login.html" class="hidden md:block bg-[#bf996f] text-white px-6 py-2 rounded-full text-lg font-semibold hover:bg-black transition">
+            Mi cuenta
+        </a>
+
+        <!-- Botón hamburger -->
+        <button id="menu-toggle" class="md:hidden text-white text-2xl focus:outline-none">
+            ☰
+        </button>
+    </nav>
+
+    <!-- Menú mobile  -->
+    <div id="mobile-menu" class="hidden flex-col bg-[#212d4b] text-white px-6 py-4 space-y-4 md:hidden">
+        <a href="home.html" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">INICIO</a>
+        <a href="documentos.html" target="_blank" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">DOCUMENTOS</a>
+        <a href="plantillas.html" target="_blank" class="hover:text-gray-300 py-1 pl-4 text-sm border-b border-[#2e3f6b]">— PLANTILLAS</a>
+        <a href="nosotros.html" target="_blank" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">NOSOTROS</a>
+        <a href="planes.html" target="_blank" class="hover:text-gray-300 py-1 border-b border-[#2e3f6b]">PLANES</a>
+        <a href="login.html" class="block text-center bg-[#bf996f] text-white px-6 py-2 rounded-full font-semibold hover:bg-black transition mt-2">
+            Mi cuenta
+        </a>
+    </div>
     </nav>
 
     <div class="container mx-auto p-6">
@@ -115,5 +135,6 @@
         mostrarProductos();
         actualizarCarrito();
     </script>
+    <script src="js/menu.js"></script>
 </body>
 </html>
